@@ -13,6 +13,7 @@ class WellComeMainVC: UIViewController {
 
     //MARK:- Outlets & variables
     @IBOutlet weak var pageControl: UIPageControl!
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
@@ -28,6 +29,11 @@ class WellComeMainVC: UIViewController {
         super.viewDidLoad()
         //AppUserDefaults.isFirstTimeAppOpen = false
         pageControl.addTarget(self, action: #selector(WellComeMainVC.didChangePageControlValue), for: .valueChanged)
+        pageControl.pageIndicatorTintColor = UIColor.gray
+        pageControl.currentPageIndicatorTintColor = UIColor.red
+        
+        pageControl.transform = CGAffineTransform(scaleX: 2, y: 2); //set value here
+
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
